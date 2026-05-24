@@ -36,7 +36,7 @@ headingId 	 	 	 	 	 	 	| The id of the view which shows compass heading.
 heading2Id              | The alternative id of the view which shows compass heading.
 distanceTextId          | The view which displays to the user the distance from the current location to destination.
 distanceFormat          | Formatter which will be used to display distance
-distanceUnit            | Miles or kiltmeters
+distanceUnit            | Miles or kilometers
 
 ### MapView Custom Methods/Attributes
 Name                    | Description
