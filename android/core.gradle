@@ -1,0 +1,16 @@
+repositories {
+    google();
+    mavenCentral();
+    maven {
+    	url "https://raw.githubusercontent.com/AsheraCordova/mvn-ashera-java-repo/master/"
+	}
+	
+	maven {
+    	url "https://raw.githubusercontent.com/AsheraCordova/mvn-ashera-android-repo/master/"
+	}
+}
+
+dependencies {
+	implementation("com.google.android.gms:play-services-location:21.3.0")
+	implementation("org.maplibre.gl:android-sdk:13.0.2")
+}

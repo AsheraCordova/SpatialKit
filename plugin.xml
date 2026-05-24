@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.spatialkit"
+        version="1.0">
+
+  <name>CordovaSpatialKitPlugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CordovaSpatialKitPlugin">
+        <param name="android-package" value="com.ashera.spatialkit.CordovaSpatialKitPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<framework src="android/core.gradle" custom="true" type="gradleReference" />
+   	 <!-- start src -->
+     <source-file src="android/src/com/ashera/spatialkit/CompassHelper.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="android/src/com/ashera/spatialkit/CompassManager.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="android/src/com/ashera/spatialkit/CompassViewImpl.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="android/src/com/ashera/spatialkit/CordovaSpatialKitPlugin.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="android/src/com/ashera/spatialkit/MapManager.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="android/src/com/ashera/spatialkit/MapViewImpl.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="android/src/com/ashera/spatialkit/SpatialKitPlugin.java" target-dir="src/com/ashera/spatialkit"/>
+     <!-- src end -->
+     <!-- start res -->
+     <source-file src="android/res/drawable-xxxhdpi/icon_location.png" target-dir="res/drawable-xxxhdpi"/>
+     <!-- res end -->
+     <!-- start tsc -->
+     <source-file src="android/tsc/src/android/widget/CompassViewImpl.ts" target-dir="tsc/src/android/widget"/>
+     <source-file src="android/tsc/src/android/widget/MapViewImpl.ts" target-dir="tsc/src/android/widget"/>
+     <!-- tsc end -->
+  </platform>
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="CordovaSpatialKitPlugin">
+        	<param name="ios-package" value="CordovaSpatialKitPlugin" />
+         	<param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<podspec>
+      <pods>
+        <pod name="MapLibre" spec="~> 6.0" />
+      </pods>
+    </podspec>
+   	 <!-- start ios -->
+     <header-file src="ios/ios/src/CompassHelper.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/CompassHelper.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/CompassManager.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/CompassManager.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/CompassViewImpl.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/CompassViewImpl.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/CordovaSpatialKitPlugin.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/CordovaSpatialKitPlugin.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/CustomPointAnnotation.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/CustomPointAnnotation.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/MapView.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/MapView.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/MapViewImpl.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/MapViewImpl.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/SpatialKitPlugin.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/SpatialKitPlugin.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/ios/src/TSAGeoMag.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/ios/src/TSAGeoMag.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <!-- ios end -->
+     <!-- start tsc -->
+     <source-file src="ios/tsc/src/ios/widget/CompassViewImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="ios/tsc/src/ios/widget/MapViewImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <!-- tsc end -->
+  </platform>
+  <platform name="browser">
+    <config-file target="config.xml" parent="/*">
+      <feature name="CordovaSpatialKitPlugin">
+        <param name="android-package" value="com.ashera.spatialkit.CordovaSpatialKitPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<framework src="browser/core.gradle" custom="true" type="gradleReference" />
+	<js-module src="browser/www/js/add_res.js" name="mapAddRes">
+    	 <runs/>
+  	</js-module>
+   	 <!-- start src -->
+     <!-- src end -->
+     <!-- start res -->
+     <!-- res end -->
+     <!-- start tsc -->
+     <source-file src="browser/tsc/src/web/widget/CompassViewImpl.ts" target-dir="tsc/src/web/widget"/>
+     <source-file src="browser/tsc/src/web/widget/MapViewImpl.ts" target-dir="tsc/src/web/widget"/>
+     <!-- tsc end -->
+  </platform>
+
+
+
+
+</plugin>

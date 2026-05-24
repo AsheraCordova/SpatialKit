@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.spatialkit.ios"
+        version="1.0">
+
+  <name>CordovaSpatialKitPlugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="ios">
+    <config-file target="config.xml" parent="/widget">
+      <feature name="CordovaSpatialKitPlugin">
+        	<param name="ios-package" value="CordovaSpatialKitPlugin" />
+         	<param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<podspec>
+      <pods>
+        <pod name="MapLibre" spec="~> 6.0" />
+      </pods>
+    </podspec>
+   	 <!-- start ios -->
+     <header-file src="ios/src/CompassHelper.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/CompassHelper.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/CompassManager.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/CompassManager.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/CompassViewImpl.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/CompassViewImpl.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/CordovaSpatialKitPlugin.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/CordovaSpatialKitPlugin.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/CustomPointAnnotation.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/CustomPointAnnotation.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/MapView.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/MapView.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/MapViewImpl.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/MapViewImpl.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/SpatialKitPlugin.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/SpatialKitPlugin.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <header-file src="ios/src/TSAGeoMag.h" target-dir="SpatialKit/ios/src"/>
+     <source-file src="ios/src/TSAGeoMag.m" target-dir="SpatialKit/ios/src" compiler-flags="-fobjc-arc-exceptions"/>
+     <!-- ios end -->
+     <!-- start tsc -->
+     <source-file src="tsc/src/ios/widget/CompassViewImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <source-file src="tsc/src/ios/widget/MapViewImpl.ts" target-dir="tsc/src/ios/widget"/>
+     <!-- tsc end -->
+  </platform>
+
+</plugin>

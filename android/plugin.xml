@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+        id="com.ashera.spatialkit"
+        version="1.0">
+
+  <name>CordovaSpatialKitPlugin</name>
+
+  <engines>
+    <engine name="cordova" version=">=3.4.0"/>
+  </engines>
+  
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="CordovaSpatialKitPlugin">
+        <param name="android-package" value="com.ashera.spatialkit.CordovaSpatialKitPlugin"/>
+        <param name="onload" value="true" />
+      </feature>
+    </config-file>
+	<framework src="core.gradle" custom="true" type="gradleReference" />
+   	 <!-- start src -->
+     <source-file src="src/com/ashera/spatialkit/CompassHelper.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="src/com/ashera/spatialkit/CompassManager.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="src/com/ashera/spatialkit/CompassViewImpl.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="src/com/ashera/spatialkit/CordovaSpatialKitPlugin.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="src/com/ashera/spatialkit/MapManager.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="src/com/ashera/spatialkit/MapViewImpl.java" target-dir="src/com/ashera/spatialkit"/>
+     <source-file src="src/com/ashera/spatialkit/SpatialKitPlugin.java" target-dir="src/com/ashera/spatialkit"/>
+     <!-- src end -->
+     <!-- start res -->
+     <source-file src="res/drawable-xxxhdpi/icon_location.png" target-dir="res/drawable-xxxhdpi"/>
+     <!-- res end -->
+     <!-- start tsc -->
+     <source-file src="tsc/src/android/widget/CompassViewImpl.ts" target-dir="tsc/src/android/widget"/>
+     <source-file src="tsc/src/android/widget/MapViewImpl.ts" target-dir="tsc/src/android/widget"/>
+     <!-- tsc end -->
+  </platform>
+
+
+</plugin>
