@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
+		xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.ashera.spatialkit"
         version="1.0">
 
@@ -16,6 +17,10 @@
         <param name="onload" value="true" />
       </feature>
     </config-file>
+     <config-file target="AndroidManifest.xml" parent="/manifest">
+    	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+		<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+	</config-file>
 	<framework src="android/core.gradle" custom="true" type="gradleReference" />
    	 <!-- start src -->
      <source-file src="android/src/com/ashera/spatialkit/CompassHelper.java" target-dir="src/com/ashera/spatialkit"/>
